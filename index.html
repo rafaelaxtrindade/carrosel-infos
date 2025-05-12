@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Críticas</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .critica-destaque { border: 2px solid #000; padding: 20px; margin-bottom: 20px; }
+        .carrossel { display: flex; justify-content: center; }
+        .miniatura { border: 1px solid #000; padding: 10px; margin: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="critica-destaque">
+        <h2 id="titulo">Título da Crítica</h2>
+        <p id="ano">Ano: 2025</p>
+        <p id="autor">Autor: Anônimo</p>
+        <p id="descricao">Descrição detalhada da crítica...</p>
+        <div id="estrelas">★★★★★</div>
+    </div>
+    <div class="carrossel">
+        <div class="miniatura" onclick="mostrarCritica(0)"><p>Crítica 1</p></div>
+        <div class="miniatura" onclick="mostrarCritica(1)"><p>Crítica 2</p></div>
+        <div class="miniatura" onclick="mostrarCritica(2)"><p>Crítica 3</p></div>
+    </div>
+    <script>
+        const criticas = [
+            { titulo: "Ótima experiência", ano: 2025, autor: "João Silva", descricao: "Amei a experiência!", estrelas: "★★★★★" },
+            { titulo: "Muito bom", ano: 2024, autor: "Maria Souza", descricao: "Gostei bastante, mas poderia ter sido melhor.", estrelas: "★★★★☆" },
+            { titulo: "Não tão bom", ano: 2023, autor: "Carlos Lima", descricao: "Esperava mais, mas não foi tão ruim.", estrelas: "★★★☆☆" }
+        ];
+        function mostrarCritica(index) {
+            document.getElementById("titulo").innerText = criticas[index].titulo;
+            document.getElementById("ano").innerText = "Ano: " + criticas[index].ano;
+            document.getElementById("autor").innerText = "Autor: " + criticas[index].autor;
+            document.getElementById("descricao").innerText = criticas[index].descricao;
+            document.getElementById("estrelas").innerText = criticas[index].estrelas;
+        }
+    </script>
+</body>
+</html>
